@@ -1,0 +1,29 @@
+{% extends "portfolio/base.html" %}
+
+{% block title %}Головна{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-md-8">
+        <h1>Ласкаво прошу до мого портфоліо!</h1>
+        <p class="lead">Тут ви можете побачити мої останні роботи</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+    {% for project in projects %}
+    <div class="col-md-4 mb-4">
+        <div class="card h-100">
+            {% if project.image %}
+            <img src="{{ project.image.url }}" class="card-img-top" alt="{{ project.title }}">
+            {% endif %}
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <p class="card-text">{{ project.description|truncatechars:100 }}</p>
+                <a href="{% url 'projects' %}" class="btn btn-primary">Всі проекти</a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
