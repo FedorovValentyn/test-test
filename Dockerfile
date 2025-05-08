@@ -10,4 +10,4 @@ WORKDIR /app
 COPY . .
 RUN pip install --no-cache-dir -r requirements.txt
 
-CMD ["sh", "-c", "gunicorn portfolio_project.wsgi --bind 0.0.0.0:$PORT"]
+CMD ["sh", "-c", "gunicorn portfolio_project.wsgi --bind 0.0.0.0:8000"]
