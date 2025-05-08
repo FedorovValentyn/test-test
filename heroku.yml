@@ -1,3 +1,5 @@
 build:
   docker:
     web: Dockerfile
+  config:
+    HEROKU_BUILDER_IGNORE_WARNINGS: 1
